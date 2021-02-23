@@ -1,0 +1,46 @@
+Guida per la Cartella StanzaPoc
+
+Fonti:
+1)Set up a private Ethereum node on Linux
+https://www.youtube.com/watch?v=A5V2jdLi5mI&list=PLHQi9fG7tS9nq5McHxjIE2tCaQcCpnRHw&index=6&ab_channel=ChainSkills
+2)How to set up a private Ethereum blockchain and deploy a Solidity Smart Contract on the blockchain
+https://medium.com/blockchainbistro/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d
+
+
+Passaggi:
+-Seguire la guida della fonte 2), fino allo step 3, quindi installare brew, geth, node.js, truffle, solc(compilatore per solidity)
+
+-Aprire altra bash
+-Andare sulla cartella private
+-chmod +x startnode.sh
+-./startnode.sh       // inizio mining(la prima volta ci vuole un po' di tempo(da mezz'ora a qualche ora), le volte successive inizia subito il mining)
+
+-Aprire altra bash
+-Andare sulla cartella private
+-ls keystore/       // verifica se c'è un account
+-get attach(apre la console js)
+>eth.accounts        // per vedere lista account
+>personal.unlockAccount(eth.accounts[0])        // sblocca l'account
+ Inserire password: 1234
+>miner.start()        // inizio mining
+ (miner.stop(), termina mining)
+ 
+-Aprire altra bash
+-Andare sulla cartella truffle
+-Assicurarsi che l'account sia sbloccato(dopo tot minuti si blocca) e il mining attivo, altrimenti vedere passaggi sopra
+-truffle console
+-truffle compile, truffle migrate (se la prima volta)
+-Inserire una di queste query:
+
+(DEBUGGING A SMART CONTRACT
+https://www.trufflesuite.com/tutorials/debugging-a-smart-contract)
+
+>SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+
+>SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+
+>SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+
+
+
+-(Per uscire dalla bash geth attach, usare exit)

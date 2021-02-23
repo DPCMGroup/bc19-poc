@@ -1,0 +1,17 @@
+Guida per aggiungere contratti e fare il deploy sulla Blockchain
+
+
+Guida per aggiungere e fare il deploy dei contratti, partendo dalla cartella Chainskills2, e togliendo/modificando i file Store.sol e 2_deploy_contracts.js
+
+Fonte:
+2)How to set up a private Ethereum blockchain and deploy a Solidity Smart Contract on the blockchain
+https://medium.com/blockchainbistro/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d
+
+-Aggiungere file .sol su Contracts e un corrispondente file .json su Migrate.
+-Aprire bash sulla cartella truffle
+-truffle compile
+-truffle migrate
+
+-Aprire altra bash sulla cartella truffle
+-truffle console
+-Query per eseguire lo smart contract.

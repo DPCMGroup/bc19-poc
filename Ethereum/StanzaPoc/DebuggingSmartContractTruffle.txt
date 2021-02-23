@@ -1,0 +1,15 @@
+DEBUGGING A SMART CONTRACT
+https://www.trufflesuite.com/tutorials/debugging-a-smart-contract
+
+
+
+SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+
+
+
+
+SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+
+
+
+SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
