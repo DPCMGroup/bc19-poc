@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RoomComponent } from './room/room.component';
-import { ShowRoomComponent } from './Room/show-room/show-room.component';
-import { AddEditRoomComponent } from './Room/add-edit-room/add-edit-room.component';
 import {SharedService} from './shared.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { WorkstationComponent } from './workstation/workstation.component';
+import { ShowWorkstationComponent } from './workstation/show-workstation/show-workstation.component';
+import { AddEditWorkstationComponent } from './workstation/add-edit-workstation/add-edit-workstation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RoomComponent,
-    ShowRoomComponent,
-    AddEditRoomComponent
+    WorkstationComponent,
+    ShowWorkstationComponent,
+    AddEditWorkstationComponent
   ],
   imports: [
     BrowserModule,

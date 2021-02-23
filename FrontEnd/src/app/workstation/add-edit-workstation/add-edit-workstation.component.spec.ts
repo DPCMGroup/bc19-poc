@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddEditRoomComponent } from './add-edit-room.component';
+import { AddEditWorkstationComponent } from './add-edit-workstation.component';
 
-describe('AddEditRoomComponent', () => {
-  let component: AddEditRoomComponent;
-  let fixture: ComponentFixture<AddEditRoomComponent>;
+describe('AddEditWorkstationComponent', () => {
+  let component: AddEditWorkstationComponent;
+  let fixture: ComponentFixture<AddEditWorkstationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddEditRoomComponent ]
+      declarations: [ AddEditWorkstationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddEditRoomComponent);
+    fixture = TestBed.createComponent(AddEditWorkstationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
