@@ -23,7 +23,7 @@ Passaggi:
 4.
 -Aprire altra bash sulla cartella private
 -ls keystore/       // verifica se c'è un account
--get attach http://127.0.0.1:8545
+-geth attach http://127.0.0.1:8545
 >eth.accounts        // per vedere lista account
 >personal.unlockAccount(eth.accounts[0])        // sblocca l'account
 >Inserire password: 1234 //presente nel file password.sec
