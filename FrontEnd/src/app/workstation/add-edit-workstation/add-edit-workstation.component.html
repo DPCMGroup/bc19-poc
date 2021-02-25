@@ -1,1 +1,20 @@
-<p>add-edit-workstation works!</p>
+<div class="form-froup row">
+
+  <label class="col-sm-2 col-form-label">Workspace</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="WorkstationID"
+           placeholder="Enter Workstation ID">
+    <input type="text" class="form-control" [(ngModel)]="WorkstationX"
+           placeholder="Enter Workstation X">
+    <input type="text" class="form-control" [(ngModel)]="WorkstationY"
+           placeholder="Enter Workstation Y">
+  </div>
+</div>
+
+<button (click)="addWorkstation()" *ngIf="workstation.WorkstationID==0" class="btn btn-primary">
+  Add
+</button>
+
+<button (click)="updateWorkstation()" *ngIf="workstation.WorkstationID!=0" class="btn btn-primary">
+  Update
+</button>

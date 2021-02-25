@@ -15,14 +15,14 @@ export class SharedService {
     return this.http.get<any[]>(this.APIUrl + '/workstation');
   }
   addWorkstation(val: any){
-    return this.http.post(this.APIUrl + '/department/', val);
+    return this.http.post(this.APIUrl + '/workstation/', val);
   }
 
   updateWorkstation(val: any){
-    return this.http.put(this.APIUrl + '/department/', val);
+    return this.http.put(this.APIUrl + '/workstation/', val);
   }
 
   deleteWorkstation(val: any){
-    return this.http.delete(this.APIUrl + '/department/'+ val);
+    return this.http.delete(this.APIUrl + '/workstation/', val);
   }
 }

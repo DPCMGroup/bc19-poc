@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-add-edit-workstation',
@@ -6,10 +7,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-edit-workstation.component.css']
 })
 export class AddEditWorkstationComponent implements OnInit {
+  constructor(private service: SharedService ) { }
 
-  constructor() { }
+  @Input() workstation: any;
+  WorkstationID: string | undefined;
+  WorkstationX: number | undefined;
+  WorkstationY: number | undefined;
 
   ngOnInit(): void {
+    this.WorkstationID = this.workstation.WorkstationID;
+    this.WorkstationX = this.workstation.WorkstationX;
+    this.WorkstationY = this.workstation.WorkstationY;
+  }
+
+  // tslint:disable-next-line:typedef
+  addWorkstation(){
+    const val = {WorkstationID: this.WorkstationID,
+      WorkstationX: this.WorkstationX,
+      WorkstationY: this.WorkstationY};
+    this.service.addWorkstation(val).subscribe(res => {
+      alert(res.toString());
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  updateWorkstation(){
+    const val = {WorkstationID: this.WorkstationID,
+      WorkstationX: this.WorkstationX,
+      WorkstationY: this.WorkstationY};
+    this.service.updateWorkstation(val).subscribe(res => {
+      alert(res.toString());
+    });
   }
 
 }

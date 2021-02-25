@@ -18,16 +18,19 @@ export class ShowWorkstationComponent implements OnInit {
     this.refreshWorkstationList();
   }
 
+  // tslint:disable-next-line:typedef
   addClick(){
-    this.workstation = {WorkstationID : 0, WorkstationName : ''};
+    this.workstation = {WorkstationID : 0, WorkstationX : '', WorkstationY : ''};
     this.ModalTitle = 'Add workstation';
     this.ActivateAddEditWorkstationComp = true;
   }
 
+  // tslint:disable-next-line:typedef
   closeClick(){
     this.ActivateAddEditWorkstationComp = false;
     this.refreshWorkstationList();
   }
+  // tslint:disable-next-line:typedef
   refreshWorkstationList(){
     this.service.getWorkstationList().subscribe(data => {
       this.WorkstationList = data;

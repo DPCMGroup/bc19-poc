@@ -1,8 +1,8 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary float-right m-2"
         data-bs-toggle="modal" data-bs-target="#exampleModal"
-(click)="addClick()" data-keyboard="false">
-  Add workstation
+(click)="addClick()" data-backdrop="static" data-keyboard="false">
+  Add Workstation
 </button>
 
 <!-- Modal -->
@@ -15,9 +15,7 @@
         (click)="closeClick()"></button>
       </div>
       <div class="modal-body">
-        <!-- Nota bene affinche compili ho rimosso da dentro il tag questa cosa-->
-        <!--  [workstation]="workstation" *ngIf="ActivateAddEditWorkstationComp"-->
-        <app-add-edit-workstation></app-add-edit-workstation>
+        <app-add-edit-workstation [workstation]="workstation" *ngIf="ActivateAddEditWorkstationComp"></app-add-edit-workstation>
       </div>
     </div>
   </div>
@@ -27,14 +25,16 @@
   <thead>
     <tr>
       <th>WorkstationID</th>
-      <th>WorkstationName</th>
+      <th>WorkstationX</th>
+      <th>WorkstationY</th>
       <th>Options</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let dataItem of WorkstationList">
       <td>{{dataItem.WorkstationID}}</td>
-      <td>{{dataItem.WorkstationName}}</td>
+      <td>{{dataItem.WorkstationX}}</td>
+      <td>{{dataItem.WorkstationY}}</td>
       <td>
         <button type="button" class="btn btn-light mr-1">Edit</button>
         <button type="button" class="btn btn-light mr-1">Delete</button>
