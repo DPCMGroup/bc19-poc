@@ -1,0 +1,28 @@
+SCOPERTE SUGLI SMART CONTRACT
+-> mapping (+scelta migliore per eliminare elementi - bisogna conservare comunque la lista degli elementi se si vuole svuotare la mapping altrimenti si crea garbage) vs array(- se elimino elementi lascio un buco) 
+-> per gestire gli accessi alle funzioni (es. solo l'owner del contratto può chiamare le funzioni): Ownable contract taken from the OpenZeppelin Solidity library.
+
+-> uint256 è la stessa roba di scrivere uint
+-> definire i bit in uint serve per risparmiare gas, ma il risparmio avviene solo se contenuti in struct es. 
+	
+	struct NormalStruct {
+	  uint a;
+	  uint b;
+	  uint c;
+	}
+
+	struct MiniMe {
+	  uint32 a;
+	  uint32 b;
+	  uint c;
+	}
+
+	// `mini` will cost less gas than `normal` because of struct packing
+-> per avere questo risparmio gli uint devono essere ordinati correttamente: 
+	For example, a struct with fields uint c; uint32 a; uint32 b; will cost less gas than a struct with fields uint32 a; uint c; uint32 b; because the uint32 fields are clustered together.
+
+-> View functions don't cost gas (solo se external view)
+-> se usiamo gas: dobbiamo tenere bene in mente che è più imporante il risparmio di gas rispetto a una programmazione che appare più semplice
+
+DOMANDE ALL'ESPERTO
+-> noi usiamo gas?
