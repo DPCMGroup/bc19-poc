@@ -20,7 +20,6 @@ export class AddEditWorkstationComponent implements OnInit {
     this.WorkstationY = this.workstation.WorkstationY;
   }
 
-  // tslint:disable-next-line:typedef
   addWorkstation(){
     const val = {WorkstationID: this.WorkstationID,
       WorkstationX: this.WorkstationX,
@@ -30,7 +29,6 @@ export class AddEditWorkstationComponent implements OnInit {
     });
   }
 
-  // tslint:disable-next-line:typedef
   updateWorkstation(){
     const val = {WorkstationID: this.WorkstationID,
       WorkstationX: this.WorkstationX,
