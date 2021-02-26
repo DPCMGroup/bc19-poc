@@ -17,6 +17,9 @@ class Client:
 
 		self.contract = self.web3.eth.contract(address=deployed_contract_address, abi=contract_abi)
 
+
+	def addWorkspace(self, _id, _x, _y):
+		self.contract.functions._creaPostazione(_id, _x, _y)
 #call contract functions with self.contract.*function name*.*call()|transact()*
 
 	

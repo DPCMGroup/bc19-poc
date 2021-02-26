@@ -1,0 +1,3 @@
+Comando da eseguire prima di installare web3.py
+
+sudo apt-get install python3-dev
