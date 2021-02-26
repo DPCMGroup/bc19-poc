@@ -36,3 +36,5 @@ varint==1.0.2
 web3==5.17.0
 websockets==8.1
 zipp==3.4.0
+
+djangorestframework==3.12.2
