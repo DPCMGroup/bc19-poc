@@ -34,7 +34,7 @@ class Client:
 	def setRoomDimensions(self, _x, _y):
 		'''
 		'''
-		self.constrat.functions._setDimensioniStanza(_x, _y).transact()
+		self.contract.functions._setDimensioniStanza(_x, _y).transact()
 
 	def addWorkspace(self, _id, _x, _y):
 
