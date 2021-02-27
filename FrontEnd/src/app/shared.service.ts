@@ -12,16 +12,19 @@ export class SharedService {
   constructor(private http: HttpClient) { }
 
   getWorkstationList(): Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl + '/workstation');
+    return this.http.get<any[]>(this.APIUrl + '/workstation/');
   }
+  // tslint:disable-next-line
   addWorkstation(val: any){
     return this.http.post(this.APIUrl + '/workstation/', val);
   }
 
+  // tslint:disable-next-line
   updateWorkstation(val: any){
     return this.http.put(this.APIUrl + '/workstation/', val);
   }
 
+  // tslint:disable-next-line
   deleteWorkstation(val: any){
     return this.http.delete(this.APIUrl + '/workstation/', val);
   }

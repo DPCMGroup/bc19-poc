@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SharedService} from '../../shared.service';
+import {SharedService} from 'src/app/shared.service';
 
 @Component({
   selector: 'app-show-workstation',
@@ -13,34 +13,44 @@ export class ShowWorkstationComponent implements OnInit {
   WorkstationList: any = [];
   ModalTitle: string | undefined;
   workstation: any;
-  ActivateAddEditWorkstationComp = false;
+  // tslint:disable-next-line
+  ActivateAddEditWorkstationComp: boolean = false;
   ngOnInit(): void {
     this.refreshWorkstationList();
   }
 
   // tslint:disable-next-line:typedef
   addClick(){
-    this.workstation = {WorkstationID : 0, WorkstationX : '', WorkstationY : ''};
+    this.workstation = {
+      WorkstationId: 0,
+      Xposition: '',
+      Yposition: '',
+      Status: 'NonDisponibile'};
     this.ModalTitle = 'Add workstation';
     this.ActivateAddEditWorkstationComp = true;
   }
 
+  // tslint:disable-next-line:typedef
   editClick(item: any){
     this.workstation = item;
     this.ModalTitle = 'Edit Workstation';
     this.ActivateAddEditWorkstationComp = true;
   }
+
   // tslint:disable-next-line:typedef
   closeClick(){
     this.ActivateAddEditWorkstationComp = false;
     this.refreshWorkstationList();
   }
+
   // tslint:disable-next-line:typedef
   refreshWorkstationList(){
     this.service.getWorkstationList().subscribe(data => {
       this.WorkstationList = data;
     });
   }
+
+  // tslint:disable-next-line:typedef
   deleteClick(item: { WorkstationID: any; }){
     if (confirm('Are you sure??')){
       this.service.deleteWorkstation(item.WorkstationID).subscribe(data => {

@@ -27,14 +27,16 @@
       <th>WorkstationID</th>
       <th>WorkstationX</th>
       <th>WorkstationY</th>
+      <th>Status</th>
       <th>Options</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let dataItem of WorkstationList">
-      <td>{{dataItem.WorkstationID}}</td>
-      <td>{{dataItem.WorkstationX}}</td>
-      <td>{{dataItem.WorkstationY}}</td>
+      <td>{{dataItem.WorkstationId}}</td>
+      <td>{{dataItem.Xposition}}</td>
+      <td>{{dataItem.Yposition}}</td>
+      <td>{{dataItem.Status}}</td>
       <td>
         <button type="button" class="btn btn-light mr-1" data-bs-toggle="modal" data-bs-target="#exampleModal"
                 (click)="editClick(dataItem)" data-backdrop="static" data-keyboard="false">
