@@ -20,12 +20,7 @@ export class SharedService {
   }
 
   // tslint:disable-next-line
-  updateWorkstation(val: any){
-    return this.http.put(this.APIUrl + '/workstation/', val);
-  }
-
-  // tslint:disable-next-line
   deleteWorkstation(val: any){
-    return this.http.delete(this.APIUrl + '/workstation/', val);
+    return this.http.delete(this.APIUrl + '/workstation/' + val);
   }
 }

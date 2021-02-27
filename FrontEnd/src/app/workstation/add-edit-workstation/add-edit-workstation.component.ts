@@ -16,32 +16,20 @@ export class AddEditWorkstationComponent implements OnInit {
   Status: string | undefined;
 
   ngOnInit(): void {
-    this.WorkstationId = this.workstation.WorkstationID;
-    this.Xposition = this.workstation.WorkstationX;
-    this.Yposition = this.workstation.WorkstationY;
+    this.WorkstationId = this.workstation.WorkstationId;
+    this.Xposition = this.workstation.Xposition;
+    this.Yposition = this.workstation.Yposition;
     this.Status = this.workstation.Status;
   }
 
   // tslint:disable-next-line:typedef
   addWorkstation(){
-    const val = {WorkstationID: this.WorkstationId,
-      WorkstationX: this.Xposition,
-      WorkstationY: this.Yposition,
+    const val = {WorkstationId: this.WorkstationId,
+      Xposition: this.Xposition,
+      Yposition: this.Yposition,
       Status: this.Status};
     this.service.addWorkstation(val).subscribe(res => {
       alert(res.toString());
     });
   }
-
-  // tslint:disable-next-line:typedef
-  updateWorkstation(){
-    const val = {WorkstationID: this.WorkstationId,
-      WorkstationX: this.Xposition,
-      WorkstationY: this.Yposition,
-      Status: this.Status};
-    this.service.updateWorkstation(val).subscribe(res => {
-      alert(res.toString());
-    });
-  }
-
 }
