@@ -8,7 +8,7 @@ from AdminApp.serializers import WorkstationSerializer
 
 # Create your views here.
 @csrf_exempt
-def workstationApi(request):
+def workstationApi(request, id=0):
     if request.method == 'GET':
         workstations = Workstation.objects.all()
         workstations_serializer = WorkstationSerializer(workstations, many=True)
@@ -21,3 +21,8 @@ def workstationApi(request):
             workstations_serializer.save()
             return JsonResponse("Added Successfully!!", safe=False)
         return JsonResponse("Failed to Add.", safe=False)
+
+    elif request.method == 'DELETE':
+        workstation = Workstation.objects.get(WorkstationId=id)
+        workstation.delete()
+        return JsonResponse("Deleted Succeffully!!", safe=False)
