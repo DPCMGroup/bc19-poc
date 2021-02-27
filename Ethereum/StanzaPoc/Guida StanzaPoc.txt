@@ -1,0 +1,53 @@
+Guida per la Cartella StanzaPoc
+
+Fonti:
+1)Set up a private Ethereum node on Linux
+https://www.youtube.com/watch?v=A5V2jdLi5mI&list=PLHQi9fG7tS9nq5McHxjIE2tCaQcCpnRHw&index=6&ab_channel=ChainSkills
+2)How to set up a private Ethereum blockchain and deploy a Solidity Smart Contract on the blockchain
+https://medium.com/blockchainbistro/set-up-a-private-ethereum-blockchain-and-deploy-your-first-solidity-smart-contract-on-the-caa8334c343d
+
+
+Passaggi:
+1. 
+- Seguire lo step 1 della guida della fonte 2), per installare le componenti(attenzione riferita a Linux), quindi installare brew(Su Windows non serve brew), geth, node.js, truffle, solc(compilatore per solidity)
+- In alternativa installare Geth, nodejs, truffle, ganache(facoltativo) e solidity cercandoli dal motore di ricerca. 
+
+2. scaricarsi la cartella stanzaPoc da github su SWE-POC
+
+3. 
+-aprire una bash sulla cartella private
+-chmod +x startnode.sh
+-./startnode.sh       // inizio mining(la prima volta ci vuole un po' di tempo(da mezz'ora a qualche ora), le volte successive inizia subito il mining)
+-in alternativa dare da riga di comando: geth --networkid 4224 --mine --minerthreads 2 --datadir "." --nodiscover --rpc --rpcport "8545" --port "30303" --rpccorsdomain "*" --allow-insecure-unlock --nat "any" --rpcapi "eth,web3,personal,net,miner" --unlock 0 --password ./password.sec --ipcpath "~/.ethereum/geth.ipc"
+
+4.
+-Aprire altra bash sulla cartella private
+-ls keystore/       // verifica se c'è un account
+-geth attach http://127.0.0.1:8545
+>eth.accounts        // per vedere lista account
+>personal.unlockAccount(eth.accounts[0])        // sblocca l'account
+>Inserire password: 1234 //presente nel file password.sec
+>miner.start()        // inizio mining (in teoria parte in automatico)
+>(miner.stop(), termina mining) 
+ 
+-(Per uscire dalla bash geth attach, usare exit) //non uscire prima del punto 5. e prima di aver fatto tutto
+
+5.
+-Aprire altra bash sulla cartella truffle
+-Assicurarsi che l'account sia sbloccato(dopo tot minuti si blocca) e il mining attivo, altrimenti vedere passaggi sopra
+-truffle compile, truffle migrate (se la prima volta)
+-truffle console
+-Inserire una di queste query: //query di prova per il contratto di prova
+	//con il contratto vero bisogna fare le query che ritornano il valore corretto
+
+(DEBUGGING A SMART CONTRACT)
+https://www.trufflesuite.com/tutorials/debugging-a-smart-contract)
+
+>SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+
+>SimpleStorage.deployed().then(function(instance){return instance.set(4);});
+
+>SimpleStorage.deployed().then(function(instance){return instance.get.call();}).then(function(value){return value.toNumber()});
+
+
+
