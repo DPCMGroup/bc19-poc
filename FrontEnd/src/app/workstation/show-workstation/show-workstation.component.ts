@@ -25,6 +25,11 @@ export class ShowWorkstationComponent implements OnInit {
     this.ActivateAddEditWorkstationComp = true;
   }
 
+  editClick(item: any){
+    this.workstation = item;
+    this.ModalTitle = 'Edit Workstation';
+    this.ActivateAddEditWorkstationComp = true;
+  }
   // tslint:disable-next-line:typedef
   closeClick(){
     this.ActivateAddEditWorkstationComp = false;
@@ -35,5 +40,13 @@ export class ShowWorkstationComponent implements OnInit {
     this.service.getWorkstationList().subscribe(data => {
       this.WorkstationList = data;
     });
+  }
+  deleteClick(item: { WorkstationID: any; }){
+    if (confirm('Are you sure??')){
+      this.service.deleteWorkstation(item.WorkstationID).subscribe(data => {
+        alert(data.toString());
+        this.refreshWorkstationList();
+      });
+    }
   }
 }
