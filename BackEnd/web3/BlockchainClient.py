@@ -32,26 +32,16 @@ class Client:
 	'''
 	
 	def setRoomDimensions(self, _x, _y):
-		'''
-		'''
 		self.contract.functions._setDimensioniStanza(_x, _y).transact()
 
 	def addWorkspace(self, _id, _x, _y):
-
-		'''
-		'''
-
 		self.contract.functions._creaPostazione(_id, _x, _y).transact()
 
 	def removeWorkspace(self, _id):
-		'''
-		'''
 		self.contract.functions._eliminaPostazione(_id).transact()
 
 	def getWorkspacePosition(self, _id):
-		'''
-		'''
-		mex=self.contract.functions.postazioni(_id).call()
+		mex = self.contract.functions.postazioni(_id).call()
 		return mex
 
 
