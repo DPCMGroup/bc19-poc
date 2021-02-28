@@ -6,6 +6,11 @@ from django.http.response import JsonResponse
 from AdminApp.models import Workstation
 from AdminApp.serializers import WorkstationSerializer
 
+from web3.BlockchainClient import Client
+
+client = Client("http://127.0.0.1:8545","./SimpleStorage.json","0x1c2830Ede118b7C1558C923C6E85A030842C9FB3")
+
+
 # Create your views here.
 @csrf_exempt
 def workstationApi(request, id=0):
