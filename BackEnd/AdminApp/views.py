@@ -24,7 +24,11 @@ def workstationApi(request, id=0):
         workstations_serializer = WorkstationSerializer(data=workstation_data)
         istransactionok = False
         if workstations_serializer.is_valid():
-            client.addWorkspace(str(workstation_data['WorkstationId']), workstation_data['Xposition'], workstation_data['Yposition'], workstation_data['Status'])
+            idws = str(workstation_data['WorkstationId'])
+            xpos = int(workstation_data['Xposition'])
+            ypos = int(workstation_data['Yposition'])
+            wssts = workstation_data['Status']
+            client.addWorkspace(idws, xpos, ypos, wssts)
             istransactionok = True
         if istransactionok:
             workstations_serializer.save()
