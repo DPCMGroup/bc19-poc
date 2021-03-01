@@ -44,6 +44,13 @@ class Client:
 		mex = self.contract.functions.postazioni(_id).call()
 		return mex
 
+		'''
+	def getPostazioniAggiunte():
+		myfilter = self.contract.eventFilter('creataPostazione', {'fromBlock': 0,'toBlock': 'latest'})
+		eventlist = myfilter.get_all_entries()
+		return eventlist
+		'''
+
 
 	
 
