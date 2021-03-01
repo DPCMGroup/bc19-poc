@@ -22,14 +22,14 @@ def workstationApi(request, id=0):
     elif request.method == 'POST':
         workstation_data = JSONParser().parse(request)
         workstations_serializer = WorkstationSerializer(data=workstation_data)
+        istransactionok = False
         if workstations_serializer.is_valid():
+            client.addWorkspace(str(workstation_data['WorkstationId']), workstation_data['Xposition'], workstation_data['Yposition'], workstation_data['Status'])
+            istransactionok = True
+        if istransactionok:
             workstations_serializer.save()
-            idws = str(workstation_data['WorkstationId'])
-            xpos = workstation_data['Xposition']
-            ypos = workstation_data['Yposition']
-            wssts = workstation_data['Status']
-            client.addWorkspace(idws, xpos, ypos, wssts)
             return JsonResponse("Added Successfully!!", safe=False)
+
         return JsonResponse("Failed to Add.", safe=False)
 
     elif request.method == 'DELETE':
