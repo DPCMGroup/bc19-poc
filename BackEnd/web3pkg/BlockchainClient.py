@@ -4,7 +4,7 @@ from web3 import Web3, HTTPProvider
 class Client:
 
 
-	def __init__(self, blockchain_address, compiled_contract_path, deployed_contract_address):
+	def __init__(self, blockchain_address):
 		'''
 		Costruisce un client per la comunicazione con la blockchain
 
@@ -12,7 +12,7 @@ class Client:
 		:param str compiled_contract_path: percorso del contratto compilato (estensione .json)
 		:param str deployed_contract_address: indirizzo del contratto sulla blockchain
 		'''
-		with open(compiled_contract_path) as file:
+		with open("./web3pkg/SimpleStorage.json") as file:
 			contract_json = json.load(file)  # load contract info as JSON
 			contract_abi = contract_json['abi']  # fetch contract's abi - necessary to call its functions
 
@@ -22,7 +22,7 @@ class Client:
 		self.web3 = Web3(HTTPProvider(blockchain_address))
 		self.web3.eth.defaultAccount = self.web3.eth.accounts[0]
 
-		self.contract = self.web3.eth.contract(address=deployed_contract_address, abi=contract_abi)
+		self.contract = self.web3.eth.contract(address="0x1c2830Ede118b7C1558C923C6E85A030842C9FB3", abi=contract_abi)
 
 	#call contract functions with self.contract.*function name*.*call()|transact()*
 
