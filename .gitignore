@@ -2,14 +2,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/angular,webstorm,pycharm,django
 # Edit at https://www.toptal.com/developers/gitignore?templates=angular,webstorm,pycharm,django
 
-Ethereum/StanzaPoc/private/geth/
-
 ### Geth ###
 # .gitignore for Geth 0.4.16
 
 # caches
-/geth
-/keystore
+/Ethereum/StanzaPoc/private/geth
+/Ethereum/StanzaPoc/private/keystore
 history
 
 # logs
