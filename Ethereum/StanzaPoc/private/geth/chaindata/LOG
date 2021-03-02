@@ -154,3 +154,29 @@
 19:34:05.641372 version@stat F·[3 1] S·2MiB[1MiB 1MiB] Sc·[0.75 0.01]
 19:34:05.664112 db@janitor F·6 G·0
 19:34:05.664214 db@open done T·70.23725ms
+=============== Mar 2, 2021 (CET) ===============
+10:14:39.381058 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:14:39.381141 CURRENT: missing target file: MANIFEST-000038
+10:14:39.381167 CURRENT.bak: missing target file: MANIFEST-000035
+=============== Mar 2, 2021 (CET) ===============
+10:14:39.381268 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:14:39.381325 table@recovery F·3
+10:14:39.381329 table@recovery recovering @29
+10:14:39.386882 table@recovery recovered @29 Gk·23520 Ck·0 Cb·0 S·1401074 Q·35253
+10:14:39.386908 table@recovery recovering @30
+10:14:39.387258 table@recovery recovered @30 Gk·2224 Ck·0 Cb·0 S·116258 Q·37478
+10:14:39.387265 table@recovery recovering @33
+10:14:39.389204 table@recovery recovered @33 Gk·14021 Ck·0 Cb·0 S·666856 Q·51500
+10:14:39.389212 table@recovery recovered F·3 N·39765 Gk·39765 Ck·0 Q·51500
+10:14:39.403632 version@stat F·[3] S·2MiB[2MiB] Sc·[0.75]
+10:14:39.411363 db@open opening
+10:14:39.412877 version@stat F·[3] S·2MiB[2MiB] Sc·[0.75]
+10:14:39.420698 db@janitor F·5 G·0
+10:14:39.420789 db@open done T·9.347387ms
+10:16:16.439189 table@compaction L0·3 -> L1·0 S·2MiB Q·51694
+10:16:16.490919 table@build created L1@36 N·34238 S·1MiB "\x02H\x9b..^\t\xad,v25139":"\xff\x89N..\xc3:\xe7,v51490"
+10:16:16.490973 version@stat F·[0 1] S·1MiB[0B 1MiB] Sc·[0.00 0.02]
+10:16:16.499125 table@compaction committed F-2 S-241KiB Ke·0 D·5527 T·59.889657ms
+10:16:16.499316 table@remove removed @33
+10:16:16.499371 table@remove removed @30
+10:16:16.499583 table@remove removed @29

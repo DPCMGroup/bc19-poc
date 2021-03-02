@@ -142,3 +142,20 @@
 19:34:05.817285 version@stat F·[2 1] S·494B[318B 176B] Sc·[0.50 0.00]
 19:34:05.835996 db@janitor F·5 G·0
 19:34:05.836062 db@open done T·52.087269ms
+=============== Mar 2, 2021 (CET) ===============
+10:14:39.456087 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:14:39.456203 CURRENT: missing target file: MANIFEST-000035
+10:14:39.456237 CURRENT.bak: missing target file: MANIFEST-000032
+=============== Mar 2, 2021 (CET) ===============
+10:14:39.456409 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:14:39.456472 table@recovery F·2
+10:14:39.456478 table@recovery recovering @29
+10:14:39.456520 table@recovery recovered @29 Gk·2 Ck·0 Cb·0 S·176 Q·16
+10:14:39.456529 table@recovery recovering @30
+10:14:39.456555 table@recovery recovered @30 Gk·1 Ck·0 Cb·0 S·159 Q·18
+10:14:39.456561 table@recovery recovered F·2 N·3 Gk·3 Ck·0 Q·18
+10:14:39.469983 version@stat F·[2] S·335B[335B] Sc·[0.50]
+10:14:39.478990 db@open opening
+10:14:39.481212 version@stat F·[2] S·335B[335B] Sc·[0.50]
+10:14:39.488097 db@janitor F·4 G·0
+10:14:39.488154 db@open done T·9.122376ms
