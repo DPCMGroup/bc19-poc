@@ -60,21 +60,4 @@ class Client:
 			if(len(cur_block.transactions)>0):
 				transs+=cur_block.transactions
 			x+=1
-		
-	'''
-	def log_loop(self):
-		event_filter = self.web3.eth.filter({'fromBlock':0, 'address':self.deployed_contract_address})
-		while True:
-			print("running")
-			for event in event_filter.get_new_entries():
-				print("got event")
-				'''
-				receipt = self.web3.eth.waitForTransactionReceipt(event['transactionHash'])
-				result = contract.events.greeting.processReceipt(receipt)
-				print(result[0]['args'])
-				'''
-			sleep(2)
-
-	'''
-	
 
