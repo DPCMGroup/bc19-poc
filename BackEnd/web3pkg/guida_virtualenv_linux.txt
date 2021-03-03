@@ -1,0 +1,41 @@
+Guida per Linux
+
+Installare virtualenv
+	
+	sudo apt-get install python3-venv
+
+Inizializzazione
+
+	python3 -m venv env (crea una cartella env che gestisce il vurtual environment)
+
+Utilizzo
+	
+	Venv permette di configurare un ambiente di sviluppo python che ha dipendenze separate da quelle del sistema e degli altri ambienti.
+	Per iniziare ad usare un virtual environment usare il comando
+
+		source env/bin/activate (da adesso fino alla disattivazione nella parte sinistra della shell ci sarà la scritta (env))
+
+	All'interno del venv si possono fare le stesse cose che si fanno normalmente, solo che quando si installano dei pacchetti con
+
+		python3 -m pip install *nome_pacchetto*
+
+	questi verranno installati nel venv che si sta utilizzando, e saranno visibili solo mentre si utilizza quel venv.
+	Per vedere (e mostrare) i pacchetti installati nel venv usare il comando
+
+		python3 -m pip freeze > requirements.txt (scrive i pacchetti con le rispettive versioni nel file requirements.txt)
+
+	Per installare i pacchetti scritti nel file requirements.txt usare il comando
+
+		python3 -m pip install -r requirements.txt
+
+
+	Per finire di usare un venv usare il comando
+
+		deactivate (la scritta (env) a sinistra sparirà )
+
+	Per essere sicuri di avere tutti gli stessi pacchetti, ogni volta che se ne installano di nuovi bisogna scriversi nel file requirements.txt col comando scritto sopra.
+
+	requirements.txt va condiviso su git
+	la cartella env no, infatti è nel .gitignore
+
+

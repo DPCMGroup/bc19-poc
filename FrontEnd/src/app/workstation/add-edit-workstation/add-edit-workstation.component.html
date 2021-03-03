@@ -1,0 +1,18 @@
+<div class="form-froup row">
+
+  <label class="col-sm-2 col-form-label">Workstation</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" [(ngModel)]="WorkstationId"
+           placeholder="Enter Workstation ID">
+    <input type="text" class="form-control" [(ngModel)]="Xposition"
+           placeholder="Enter Workstation X">
+    <input type="text" class="form-control" [(ngModel)]="Yposition"
+           placeholder="Enter Workstation Y">
+    <input type="text" class="form-control" [(ngModel)]="Status"
+           placeholder="Enter Status">
+  </div>
+</div>
+
+<button (click)="addWorkstation()" *ngIf="workstation.WorkstationId==0" class="btn btn-primary">
+  Add
+</button>
