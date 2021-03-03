@@ -29,6 +29,7 @@ Passaggi:
 >Inserire password: 1234 //presente nel file password.sec
 >miner.start()        // inizio mining (in teoria parte in automatico)
 >(miner.stop(), termina mining) 
+>eth.pendingTransactions   //vengono mostrate eventuali transazioni in corso
  
 -(Per uscire dalla bash geth attach, usare exit) //non uscire prima del punto 5. e prima di aver fatto tutto
 
