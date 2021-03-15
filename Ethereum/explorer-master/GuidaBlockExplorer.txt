@@ -1,0 +1,55 @@
+Guida Block Explorer
+
+Fonti:
+1)How to set up your own private Ethereum Blockchain browser:
+https://www.youtube.com/watch?v=mnQrWtBnDaA&list=PL6TbWIxWsLY0VPlese2_z5xDZZ33ZuvV6&index=21&t=586s&ab_channel=MattThomas
+2)Repo Github: https://github.com/etherparty/explorer
+
+Prerequisiti:
+-nodejs, npm.
+
+
+Guida:
+-Fare partire localhost 8080, il servizio
+ Quindi con npm start, dentro la cartella explore-master    //corregge le dipendenze
+-Lasciare attiva questa finestra
+-Dentro la cartella StanzaPoc->private, fare partire startnode
+./startnode.sh
+-Aprire un'altra finestra, andare dentro la cartella StanzaPoc->private
+geth attach http://127.0.0.1:8545  
+-Ricarica la pagina localhost8080
+
+
+
+Extra:
+Sul Browser, andare su Remix:
+-Compilare un contratto
+-Environment: Web3 Provider
+-Assicurarsi che sia connesso a geth, network id 1234 (sotto)
+-Deploy del contratto
+-Esempio: interagisci con una funzione, AddPostazione: 1,1,1
+
+
+Su Block Explorer:
+E' possibile cercare per:
+-numero blocco, hash, transazione
+
+-Quando si fa il deploy da remix, su geth è visibile l'hash della transazione(e anche il numero di blocco ad esempio)
+-copy dell'hash(o il numero del blocco) sulla barra di ricerca e si ottengono le info del transazione(hash,account,address,etc)
+
+
+
+
+-copy abi del contratto
+-su Editor notepad
+ Modifica->Operazioni sulle linee->unisci righe   //per ottenere su un unica riga l'abi
+
+
+sulla console geth 
+>abi=           //paste abi del contratto
+>abi                   //verifico l'abi
+>var address=".."     //copy address della singola transazione, da remix
+>var adder=eth.contract(abi).at(address)
+Esempio: >adder.getPostazione("0")
+         [1,1,1]			//risultato in base all'input fornito su remix
+
