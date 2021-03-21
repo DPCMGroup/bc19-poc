@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     //questo qua sotto lo uso solo per il testing. Se lo si vuole usare prima avviare un server a quell'url che esponga un file json (con contenuto che non sia jsonArray)
     //val url = "http://192.168.0.102:8001/temp.json"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -122,9 +123,9 @@ class MainActivity : AppCompatActivity() {
         //uso runOnUiThread perché se modifico qualcosa dell'UI da un thread diverso da quello che l'ha creata mi da errore, quindi devo modificarlo
         //dal suo thread
         //In particolare la modifica che faccio qui è assegnare al responseTextView la stringa che mi viene passata, in modo che possa essere visualizzata
-        this@MainActivity.runOnUiThread(java.lang.Runnable {
+        this@MainActivity.runOnUiThread {
             responseTextView.text = s
-        })
+        }
     }
 
 }
