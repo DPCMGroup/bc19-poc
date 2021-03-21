@@ -255,3 +255,5 @@
 19:21:24.196702 table@remove removed @58
 19:21:24.199843 table@remove removed @62
 19:21:24.201290 table@remove removed @63
+21:11:31.715954 db@close closing
+21:11:31.729406 db@close done T·14.4659ms
