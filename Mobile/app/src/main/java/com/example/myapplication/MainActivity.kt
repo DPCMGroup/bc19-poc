@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         status = findViewById<EditText>(R.id.workstationState)
 
         //rendo il resposneTextView scrollabile orizzontalmente
-        // (oltra al comando seguente serve anche aver messo scrollbars - vertical = true per il responseTextView in activity_main.xml
+        // (oltra al comando seguente bisogna anche aver messo scrollbars - vertical = true tra gli atrtibuti del responseTextView in activity_main.xml
         responseTextView.setMovementMethod(ScrollingMovementMethod())
 
         //per ogni pulsante assegna un onClickListener
