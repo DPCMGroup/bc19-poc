@@ -22,7 +22,7 @@ class Client:
 		self.web3 = Web3(HTTPProvider(blockchain_address))
 		self.web3.eth.defaultAccount = self.web3.eth.accounts[0]
 
-		self.contract = self.web3.eth.contract(address="0x1c2830Ede118b7C1558C923C6E85A030842C9FB3", abi=contract_abi)
+		self.contract = self.web3.eth.contract(address="0xc6690B503EBFaBeb1411d245D353735c77F24ac1", abi=contract_abi)
 
 	#call contract functions with self.contract.*function name*.*call()|transact()*
 
