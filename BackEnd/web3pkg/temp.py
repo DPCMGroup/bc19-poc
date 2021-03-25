@@ -19,10 +19,12 @@ def func1(receipt, transaction):
 def failedFunc():
 	print("la transazione è in attesa da troppo tempo, forse c'è stato un errore")
 
+
+
 client = Client()
 
 
-tx_hash = client.hashAndSendData("prova 1 2 3")
+tx_hash = client.hashAndSendData("prova prova prova")
 #print(tx_hash)
 print("transaction sent")
 time.sleep(3)

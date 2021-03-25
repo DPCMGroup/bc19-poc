@@ -76,17 +76,19 @@ class Client:
 		count = 0
 		while self.running and not found and not count >= maxFailures:
 			try:
+				if(not count == 0):
+					time.sleep(poll_interval)
 				receipt = self.web3.eth.getTransactionReceipt(transaction_hash)
 				found = True
 				print("transaction found")
-				trans = self.web3.eth.get_transaction(transaction_hash)
+				tx = self.web3.eth.get_transaction(transaction_hash)
 				#print(trans)
-				callback_function(receipt, trans)
+				callback_function(receipt, tx)
 			except:
 				#traceback.print_exc()
 				print("transaction not found")
 				count += 1
-			time.sleep(poll_interval)
+				
 		if(count>=maxFailures):
 			failure_callback_function()
 		

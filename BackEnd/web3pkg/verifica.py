@@ -2,7 +2,7 @@ import hashlib
 
 m = hashlib.sha256()
 
-m.update(b"prova 1 2 3")
+m.update(b"prova prova prova")
 
 x = m.digest()
 
