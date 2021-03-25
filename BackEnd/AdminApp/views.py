@@ -28,7 +28,8 @@ def workstationApi(request, id=0):
             xpos = int(workstation_data['Xposition'])
             ypos = int(workstation_data['Yposition'])
             wssts = workstation_data['Status']
-            client.addWorkspace(idws, xpos, ypos, wssts)
+            #non invio la transazione alla blockchain
+            #client.addWorkspace(idws, xpos, ypos, wssts)
             istransactionok = True
         if istransactionok:
             workstations_serializer.save()
@@ -39,5 +40,6 @@ def workstationApi(request, id=0):
     elif request.method == 'DELETE':
         workstation = Workstation.objects.get(WorkstationId=id)
         workstation.delete()
-        client.removeWorkspace(str(id))
+        # non invio la transazione alla blockchain
+        #client.removeWorkspace(str(id))
         return JsonResponse("Deleted Succeffully!!", safe=False)
