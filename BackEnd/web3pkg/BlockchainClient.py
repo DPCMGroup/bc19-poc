@@ -2,6 +2,7 @@ from web3 import Web3, HTTPProvider
 from threading import Thread
 import time
 import hashlib
+import traceback
 
 class Client:
 
@@ -23,7 +24,7 @@ class Client:
 	def sendTransaction(self, byteData):
 		'''
 		Invia una transazione dall'account di default all'account di default.
-		Inserisce nlla transazione i dati passati in byteData, che devono essere appunto byte.
+		Inserisce nella transazione i dati passati in byteData, che devono essere appunto byte.
 
 		:param str byteData: la stringa da inviare come contenuto della transazione
 
@@ -64,27 +65,37 @@ class Client:
 		#return sendTransaction( f"\{ \"azione\": \"imposta stato postazione\", \"id postazione\": \"{id}\", \"stato\": \"{state}\"\}" )
 
 
-	def log_loop(self, transaction_hash, poll_interval, callback_function):
+	def log_loop(self, transaction_hash, poll_interval, callback_function, failure_callback_function):
 		'''
 		:param event_filter: il filtro usato per sleezionare solo alcune tra tutte le transazioni che verranno minate
 		:param float poll_interval: l'intervallo tra le ispezioni eseguite sulla blockchain per trovare nuove transazioni minate
 		:param callback_function: la funziona che verrà chiamata quando verrà rilevata una transazione eseguita
 		'''
 		found = False
-		while self.running and not found:
+		maxFailures = 3
+		count = 0
+		while self.running and not found and not count >= maxFailures:
 			try:
 				receipt = self.web3.eth.getTransactionReceipt(transaction_hash)
 				found = True
-				callback_function(receipt)
+				print("transaction found")
+				trans = self.web3.eth.get_transaction(transaction_hash)
+				#print(trans)
+				callback_function(receipt, trans)
 			except:
+				#traceback.print_exc()
 				print("transaction not found")
+				count += 1
 			time.sleep(poll_interval)
+		if(count>=maxFailures):
+			failure_callback_function()
+		
 		print("end of thread")
 		self.running = False
 	
 
 
-	def startListening(self, transaction_hash, callback_function):
+	def startListening(self, transaction_hash, callback_function, failure_callback_function):
 		'''
 		:param transaction_hash: l'hash della transazione per la quale aspettare il minaggio. Deve essere in byte
 		:param callback_function: la funziona che verrà chiamata quando verrà rilevata una transazione minata.
@@ -92,7 +103,7 @@ class Client:
 		'''
 		#block_filter = self.web3.eth.filter('latest')
 		#tx_filter = self.web3.eth.filter('pending')
-		self.listeningThread = Thread(target=self.log_loop, args=(transaction_hash, 5, callback_function), daemon=True) #daemon=True non so se sia la cosa giusta da usare
+		self.listeningThread = Thread(target=self.log_loop, args=(transaction_hash, 5, callback_function, failure_callback_function), daemon=True) #daemon=True non so se sia la cosa giusta da usare
 		self.running = True
 		self.listeningThread.start()
 		

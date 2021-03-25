@@ -30,6 +30,7 @@ def workstationApi(request, id=0):
             wssts = workstation_data['Status']
             #non invio la transazione alla blockchain
             #client.addWorkspace(idws, xpos, ypos, wssts)
+            client.hashAndSendData("ciao prova")
             istransactionok = True
         if istransactionok:
             workstations_serializer.save()
