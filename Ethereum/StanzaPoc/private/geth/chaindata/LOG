@@ -379,3 +379,36 @@
 14:29:58.584447 db@open done T·131.9939ms
 14:37:05.776805 db@close closing
 14:37:05.797457 db@close done T·20.651ms
+=============== Mar 29, 2021 (CEST) ===============
+01:06:46.987920 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+01:06:46.992608 CURRENT: missing target file: MANIFEST-000119
+01:06:46.994448 CURRENT.bak: missing target file: MANIFEST-000116
+=============== Mar 29, 2021 (CEST) ===============
+01:06:47.007205 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+01:06:47.009899 table@recovery F·3
+01:06:47.010096 table@recovery recovering @121
+01:06:47.250409 table@recovery recovered @121 Gk·41135 Ck·0 Cb·0 S·2144885 Q·108896
+01:06:47.250851 table@recovery recovering @122
+01:06:47.486042 table@recovery recovered @122 Gk·32194 Ck·0 Cb·0 S·1971106 Q·108895
+01:06:47.486495 table@recovery recovering @123
+01:06:47.498109 table@recovery recovered @123 Gk·1837 Ck·0 Cb·0 S·98647 Q·110734
+01:06:47.498554 table@recovery recovered F·3 N·75166 Gk·75166 Ck·0 Q·110734
+01:06:47.535865 version@stat F·[3] S·4MiB[4MiB] Sc·[0.75]
+01:06:47.540472 db@open opening
+01:06:47.542522 journal@recovery F·1
+01:06:47.544341 journal@recovery recovering @124
+01:06:47.557855 memdb@flush created L0@125 N·70 S·3KiB "\x0f\xb4\x14..\xa9IE,v110803":"\xe6k\x10..ֆ\r,v110800"
+01:06:47.560852 version@stat F·[4] S·4MiB[4MiB] Sc·[1.00]
+01:06:47.568992 db@janitor F·7 G·0
+01:06:47.569348 db@open done T·28.4992ms
+01:06:47.569477 table@compaction L0·4 -> L1·0 S·4MiB Q·110806
+01:06:48.047987 table@build created L1@127 N·41307 S·2MiB "\x00\x1b\x11..\x15/\xec,v57015":"h\x00\x00..tO\r,v44241"
+01:06:48.705359 table@build created L1@128 N·33297 S·1MiB "h\x00\x00..O\rt,v44238":"\xff\xe7\xdf..\x16\xb7i,v72264"
+01:06:48.705680 version@stat F·[0 2] S·3MiB[0B 3MiB] Sc·[0.00 0.04]
+01:06:48.708495 table@compaction committed F-2 S-28KiB Ke·0 D·632 T·1.1384699s
+01:06:48.709932 table@remove removed @125
+01:06:48.711295 table@remove removed @123
+01:06:48.712814 table@remove removed @122
+01:06:48.714328 table@remove removed @121
+01:08:18.108042 db@close closing
+01:08:18.118208 db@close done T·10.1619ms

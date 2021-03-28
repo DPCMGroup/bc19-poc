@@ -365,3 +365,26 @@
 14:29:58.800572 table@remove removed @102
 14:37:05.829520 db@close closing
 14:37:05.840045 db@close done T·10.5222ms
+=============== Mar 29, 2021 (CEST) ===============
+01:06:47.707833 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+01:06:47.713719 CURRENT: missing target file: MANIFEST-000114
+01:06:47.716589 CURRENT.bak: missing target file: MANIFEST-000111
+=============== Mar 29, 2021 (CEST) ===============
+01:06:47.730702 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+01:06:47.732638 table@recovery F·2
+01:06:47.732888 table@recovery recovering @119
+01:06:47.743694 table@recovery recovered @119 Gk·1 Ck·0 Cb·0 S·159 Q·73
+01:06:47.744317 table@recovery recovering @122
+01:06:47.753438 table@recovery recovered @122 Gk·2 Ck·0 Cb·0 S·176 Q·73
+01:06:47.754133 table@recovery recovered F·2 N·3 Gk·3 Ck·0 Q·73
+01:06:47.792480 version@stat F·[2] S·335B[335B] Sc·[0.50]
+01:06:47.796214 db@open opening
+01:06:47.798169 journal@recovery F·1
+01:06:47.798558 journal@recovery recovering @120
+01:06:47.813669 memdb@flush created L0@124 N·1 S·159B "loc..seq,v75":"loc..seq,v75"
+01:06:47.816069 version@stat F·[3] S·494B[494B] Sc·[0.75]
+01:06:47.829029 db@janitor F·6 G·1
+01:06:47.829245 db@janitor removing manifest-121
+01:06:47.830612 db@open done T·34.2174ms
+01:08:18.126828 db@close closing
+01:08:18.138753 db@close done T·11.9191ms
